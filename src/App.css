@@ -1,0 +1,377 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  /* font-size: 2vw; */
+  /* border-style: solid; */
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 3vw 20px 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  border-radius: 0 0 30px 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+header img{
+  height: 100px;
+  /* transform-origin: top left; */
+  transform: scale(1.3);
+}
+
+header .logo{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+header .logo p{
+  position:relative;
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-left: 2vw;
+  color: white;
+  text-shadow: 0 0 7px black;
+  /* top: 30px; */
+}
+
+.navigation a{
+  position: relative;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 1vw;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+
+.navigation a::before{
+  content: '';
+  position: absolute;
+  width: 110%;
+  height: 2px;
+  left: -5%;
+  bottom: -7px;
+  background: white;
+  border-style:solid;
+  border-width: 1px;
+  border-radius: 4px;
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+
+.navigation a:hover::before{
+  transform-origin: center;
+  transform: scaleX(1);
+}
+
+.navigation .loginBtn-popup{
+  width: 100px;
+  height: 50px;
+  margin-left: 1vw;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  transition: .5s;
+}
+
+.navigation .loginBtn-popup:hover{
+  background-color: white;
+  color: black;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background-color: rgba(11,33,44,255); */
+  background: url('./background.jpg');
+  /* background: url('./background3.jpg'); */
+  
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  overflow-y: scroll;
+}
+
+.loginBox{
+  display: flex;
+  align-items: left;
+  justify-content: center;
+  text-align: left;
+  flex-direction: column;
+  position: relative;
+  /* width: 50vw;
+  height: 50vh; */
+  /* background: rgba(255, 255, 255, 0.1); */
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.5 );
+}
+
+.formBox{
+  padding: 20%;
+  font-size: 1.3em;
+}
+
+.formBox h2{
+  text-align: center;
+  font-size: 1.3em;
+}
+.formBox p{
+  font-size: 1.3rem;
+}
+.formBox a{
+  font-size: 1.3rem;
+}
+.input-box{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid black;
+  margin: 30px 0;
+}
+
+.input-box label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1.3em;
+  color: rgb(21, 18, 18);
+  font-weight:bold;
+  pointer-events: none;
+}
+
+.input-box input{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  top: 0px;
+  font-size: 1.3em;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+  top: -5px;
+  transition: 0.5s;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.remember-forget{
+  font-weight: 500;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.remember-forget label input{
+  accent-color: grey;
+  transform: scale(1.5);
+  margin-right: 7px;
+}
+
+.remember-forget label{
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+.remember-forget a{
+  color: #162938;
+  text-decoration: none;
+  text-align: right;
+}
+
+.remember-forget a:hover{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.signInButton{
+  display: flex;
+  justify-content: center;
+}
+
+.signInButton button{
+  font-size: 1.3em;
+  width: 100px;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.signInButton button:hover{
+  background-color: rgba(128,128,128,0.4);
+  width: 70%;   
+}
+
+.sendOTP{
+  display: flex;
+  justify-content: center;
+}
+
+.sendOTP button{
+  font-size: 1.3em;
+  width: 140px;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.sendOTP button:hover{
+  background-color: rgba(128,128,128,0.4);
+  width: 70%;   
+}
+
+.signUp{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 1.3rem;
+}
+
+.signUp p a{
+  text-decoration: none;
+  color:black;
+}
+
+.signUp p a:hover{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.formBox .closeButton{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: black;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  color: white;
+}
+
+.about{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+.aboutContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+  
+}
+
+.aboutContainer img{
+  position:relative;
+  width: 500px;
+  transform: scale(1);
+  border-radius: 20px;
+  z-index: 0;
+  transition: .5s;
+
+}
+
+.aboutContainer.left img{
+  right: 50px;
+}
+
+.aboutContainer.right img{
+  transform-origin: right;
+  left: 50px;
+}
+
+.aboutContainer img:hover{
+  transform: scale(1.2);
+  /* transition: 1s; */
+}
+
+.aboutContainer.left img:hover{
+  translate: 100px;
+}
+
+.aboutContainer.right img:hover{
+  translate: -50px;
+}
+
+.aboutContainer p{
+  z-index: 1;
+
+  display: inline-block;
+  font-size: 1.5em;
+  
+  width: 480px;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: rgba(255,255,255,0.5);
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  padding: 50px;
+}
+
+.left.aboutContainer p{
+  background-color: rgba(255,255,255,0.3);
+  color: black;
+}
+
+.right.aboutContainer p{
+  background-color: rgba(0,0,0,0.3);
+  color: white;
+}
